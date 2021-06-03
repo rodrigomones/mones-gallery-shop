@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          mones-gallery-shop
+          mones-rodrigo
         </a>
       </header>
     </div>
