@@ -1,0 +1,42 @@
+@import "./_variables.scss";
+
+@function weight($weight-name) {
+  @return map-get($font-wights, $weight-name);
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+.Navbar {
+  background-color: $secondary-color;
+}
+.btn1 {
+  margin-left: auto;
+}
+.btn1,
+.btn2,
+.btn3 {
+  color: $primary-color;
+  padding-right: 40px;
+}
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  text-decoration: underline;
+}
+.carro {
+  margin-left: auto;
+}
+.burger {
+  visibility: hidden;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: "768px") {
+  .burger {
+    visibility: visible;
+  }
+}
