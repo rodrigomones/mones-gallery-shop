@@ -1,9 +1,9 @@
 import { Typography } from "@material-ui/core";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = (props) => {
   return (
     <>
-      <Typography variant="h1">Hello World!</Typography>
+      <Typography variant="h1">{props.greeting}</Typography>
     </>
   );
 };
