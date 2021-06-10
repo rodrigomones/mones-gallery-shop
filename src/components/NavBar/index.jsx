@@ -1,9 +1,8 @@
 import "./style.scss";
 import { AppBar, Toolbar, CssBaseline } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 import Button from "@material-ui/core/Button";
-import Badge from "@material-ui/core/Badge";
+import { CartWidget } from "../CartWidget";
 
 export const NavBar = () => {
   return (
@@ -21,10 +20,7 @@ export const NavBar = () => {
           <Button href="#text-buttons" className="btn3">
             Link3
           </Button>
-
-          <Badge badgeContent={2} color="secondary">
-            <ShoppingCart className="carro" />
-          </Badge>
+          <CartWidget />
           <MenuIcon className="burger" />
         </Toolbar>
       </AppBar>
