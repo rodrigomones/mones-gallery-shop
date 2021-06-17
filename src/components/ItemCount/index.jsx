@@ -3,16 +3,8 @@ import Button from "@material-ui/core/Button";
 import "./style.scss";
 import { Typography } from "@material-ui/core";
 
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
   const [itemCount, setItemCount] = useState(1);
-
-  const onAdd = () => {
-    if (itemCount > 1) {
-      alert(`Felicitaciones, compraste ${itemCount} copias!`);
-    } else {
-      alert("Felicitaciones, compraste una hermosa copia!");
-    }
-  };
 
   const suma = () => {
     if (itemCount < stock) {
@@ -37,7 +29,7 @@ export const ItemCount = ({ stock, initial }) => {
             variant="contained"
             size="small"
             color="secondary"
-            onClick={onAdd}
+            onClick={() => onAdd(itemCount)}
           >
             Añadir a carrito
           </Button>

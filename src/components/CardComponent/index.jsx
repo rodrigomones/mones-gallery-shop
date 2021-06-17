@@ -22,6 +22,14 @@ const useStyles = makeStyles({
 export default function CardComponent({ initial, stock, name }) {
   const classes = useStyles();
 
+  const onAdd = (itemCount) => {
+    if (itemCount > 1) {
+      alert(`Felicitaciones, compraste ${itemCount} copias!`);
+    } else {
+      alert("Felicitaciones, compraste una hermosa copia!");
+    }
+  };
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -41,7 +49,7 @@ export default function CardComponent({ initial, stock, name }) {
           <Typography>Stock: {stock}</Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={stock} inital={initial} />
+      <ItemCount stock={stock} inital={initial} onAdd={onAdd} />
       <CardActions>
         <Button size="small" color="primary">
           Learn More
