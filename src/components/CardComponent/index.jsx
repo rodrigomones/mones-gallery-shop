@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CardComponent({ initial, stock, name }) {
+export default function CardComponent({ initial, stock, title, price, img }) {
   const classes = useStyles();
 
   const onAdd = (itemCount) => {
@@ -35,12 +35,13 @@ export default function CardComponent({ initial, stock, name }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/images/foto-1.jpg"
+          image={img}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {name}
+            {title} <br />
+            {price}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
