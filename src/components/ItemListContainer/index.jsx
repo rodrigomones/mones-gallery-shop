@@ -1,7 +1,7 @@
 import { Typography } from "@material-ui/core";
 //import CardComponent from "../CardComponent";
 import { useEffect, useState } from "react";
-import { getData } from "../utils";
+import { getData } from "../../utils";
 import { ItemListComponent } from "../ItemListComponent";
 
 export const ItemListContainer = (props) => {

@@ -40,8 +40,7 @@ export default function CardComponent({ initial, stock, title, price, img }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {title} <br />
-            {price}
+            {title} <br />${price}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
