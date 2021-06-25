@@ -1,4 +1,4 @@
-import CardComponent from "../CardComponent";
+import Item from "../Item";
 import "./style.scss";
 
 export const ItemListComponent = ({ productos }) => {
@@ -8,7 +8,7 @@ export const ItemListComponent = ({ productos }) => {
         {productos.map((element, index) => {
           return (
             <span key={index}>
-              <CardComponent
+              <Item
                 title={element.title}
                 initial={1}
                 stock={10}

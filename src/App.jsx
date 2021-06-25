@@ -1,12 +1,15 @@
+// import { Carousel } from "./components/Carousel";
 import "./App.css";
-import { ItemListContainer } from "./components/ItemListContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting={"Hello World!"} />
+      {/* <Carousel /> */}
+      {/* <ItemListContainer greeting={"MONES"} /> */}
+      <ItemDetailContainer />
     </div>
   );
 }

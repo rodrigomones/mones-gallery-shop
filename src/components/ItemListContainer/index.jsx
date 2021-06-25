@@ -3,6 +3,7 @@ import { Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getData } from "../../utils";
 import { ItemListComponent } from "../ItemListComponent";
+import "./style.scss";
 
 export const ItemListContainer = (props) => {
   // const producto = {
@@ -35,8 +36,10 @@ export const ItemListContainer = (props) => {
 
   return (
     <>
-      <Typography variant="h1">{props.greeting}</Typography>
-      <ItemListComponent productos={productos} />
+      <div className="container">
+        <Typography variant="h1">{props.greeting}</Typography>
+        <ItemListComponent productos={productos} />
+      </div>
     </>
   );
 };

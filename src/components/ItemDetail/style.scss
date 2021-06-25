@@ -1,0 +1,14 @@
+.img {
+  margin: 10px auto;
+  max-width: 90%;
+}
+.detail {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+}
+
+.detail__item {
+  grid-column: 2 / 3;
+  margin: auto;
+  padding-right: 20px;
+}
