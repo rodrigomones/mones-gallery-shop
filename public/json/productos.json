@@ -1,9 +1,122 @@
-{
-  "id": 1,
-  "title": "foto1",
-  "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
-  "initial": 1,
-  "stock": 10,
-  "price": 200,
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
-}
+[
+  {
+    "category": 1,
+    "id": 1,
+    "title": "foto1",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 1,
+    "id": 2,
+    "title": "foto2",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 1,
+    "id": 3,
+    "title": "foto3",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 1,
+    "id": 4,
+    "title": "foto4",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 1,
+    "id": 5,
+    "title": "foto5",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 1,
+    "id": 6,
+    "title": "foto6",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 2,
+    "id": 7,
+    "title": "foto7",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 2,
+    "id": 8,
+    "title": "foto8",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 2,
+    "id": 9,
+    "title": "foto9",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 3,
+    "id": 10,
+    "title": "foto10",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 3,
+    "id": 11,
+    "title": "foto11",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  },
+  {
+    "category": 3,
+    "id": 12,
+    "title": "foto12",
+    "img": "https://media.viajando.travel/p/167bc71be14c5b83148caf367b70d8bd/adjuntos/236/imagenes/000/040/0000040011/la-belleza-y-colores-del-parque-nacional-torres-del-paine-destacan-donde-se-los-mire-foto-hotel-rio-serrano.jpg",
+    "initial": 1,
+    "stock": 10,
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia tellus at porttitor hendrerit. Nam fringilla consequat felis, sit amet molestie lorem tristique aliquam."
+  }
+]

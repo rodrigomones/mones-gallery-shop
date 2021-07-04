@@ -12,22 +12,24 @@ import "./style.scss";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-    margin: "20px",
+    marginTop: "15vh",
+    backgroundColor: "#FFFFF9",
+    maxWidth: "80vw",
+    display: "grid",
+    gridTemplateColumns: "1.5fr 0.5fr",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    margin: "auto",
   },
   media: {
     height: 200,
   },
 });
 
-export default function ItemDetail({
-  initial,
-  stock,
-  title,
-  price,
-  img,
-  description,
-}) {
+export default function ItemDetail({ productos }) {
   const classes = useStyles();
 
   const onAdd = (itemCount) => {
@@ -39,17 +41,24 @@ export default function ItemDetail({
   };
 
   return (
-    <div className="detail">
-      <img className="img" src={img} alt="foto1" />
+    <div className={classes.root}>
+      <img className="img" src={productos.thumbnail} alt="foto1" />
       <div className="detail__item">
-        <Typography gutterBottom variant="h5" component="h2">
-          {title} <br />${price}
+        <Typography gutterBottom variant="h6" component="h2">
+          {productos.title} <br />
         </Typography>
+        <Typography variant="h4">${productos.price} </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {description}
+          {productos.description}
         </Typography>
-        <Typography>Stock: {stock}</Typography>
-        <ItemCount stock={stock} inital={initial} onAdd={onAdd} />
+        <Typography variant="overline">
+          Stock: {productos.available_quantity} <br />
+        </Typography>
+        <ItemCount
+          stock={productos.available_quantity}
+          inital={productos.initial}
+          onAdd={onAdd}
+        />
       </div>
     </div>
   );

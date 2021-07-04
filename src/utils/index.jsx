@@ -5,3 +5,4 @@ export async function getData(categorias) {
   const data = await response.json();
   return data.results;
 }
+export const Productos = "/json/productos.json";

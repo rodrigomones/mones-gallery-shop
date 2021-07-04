@@ -11,9 +11,10 @@ export const ItemListComponent = ({ productos }) => {
               <Item
                 title={element.title}
                 initial={1}
-                stock={10}
+                stock={element.stock}
                 img={element.img}
                 price={element.price}
+                id={element.id}
               />
             </span>
           );

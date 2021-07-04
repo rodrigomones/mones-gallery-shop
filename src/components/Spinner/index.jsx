@@ -20,7 +20,7 @@ export default function CircularDeterminate() {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 0 : prevProgress + 10
       );
-    }, 600);
+    }, 400);
 
     return () => {
       clearInterval(timer);

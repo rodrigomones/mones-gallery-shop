@@ -1,9 +1,47 @@
+import { Typography } from "@material-ui/core";
 import "./style.scss";
+import { makeStyles } from "@material-ui/core/styles";
+import { withRouter } from "react-router";
 
-export const Carousel = () => {
+const useStyles = makeStyles({
+  root: {
+    position: "absolute",
+    top: "150px",
+    marginLeft: "25vw",
+    fontWeight: 900,
+    zIndex: 99,
+    "& span": {
+      fontWeight: 400,
+      fontSize: 24,
+    },
+  },
+});
+
+const Carousel = (props) => {
+  const classes = useStyles();
+  let {
+    location: { pathname },
+  } = props;
+  let pathnames = pathname.split("/").filter((x) => x);
+  var imagen;
+  if (pathnames.includes("zapatillas")) {
+    imagen = "zapatillas1.jpeg";
+  } else if (pathnames.includes("celulares")) {
+    imagen = "iphone12.jpeg";
+  } else if (pathnames.includes("televisores")) {
+    imagen = "tv1.jpg";
+  } else {
+    imagen = "intro1.jpg";
+  }
+
   return (
     <>
-      <img className="fondo" src="../images/intro1.jpg" alt="foto portada" />
+      <Typography className={classes.root} variant="h2">
+        {props.titulo} <br /> <span> {props.subtitulo}</span>
+      </Typography>
+      <img className="fondo" src={`../images/${imagen}`} alt="foto portada1" />
     </>
   );
 };
+
+export default withRouter(Carousel);

@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Sobre el proyecto
+
+La idea de este proyecto, es realizar un e-commerce de Fotografías. Como en esta entrega utilizo la API de Mercadolibre, utilicé fotos que sean acordes a los productos de las categorías.
+Pero es por eso que toma preminencia la fotografía en el inicio.
+Utilicé para el proyecto:
+Framework de Material-UI
+La extensión de estilos SASS
+React Router DOM, para la navegabilidad.
+
+Utilicé en el Componente Carousel, las propiedades que el withRouter me brindaba, para poder tomar la "location", ponerlas en un array, y así controlar las imágenes de portada, mediante un condicional, dependiendo de la categoría o si se encuentra en el home.
+
 ## Available Scripts
 
 In the project directory, you can run:
