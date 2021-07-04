@@ -42,7 +42,7 @@ export default function ItemDetail({ productos }) {
 
   return (
     <div className={classes.root}>
-      <img className="img" src={productos.thumbnail} alt="foto1" />
+      <img className="img" src={productos.thumbnail} alt={productos.title} />
       <div className="detail__item">
         <Typography gutterBottom variant="h6" component="h2">
           {productos.title} <br />

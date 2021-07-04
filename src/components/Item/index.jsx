@@ -36,7 +36,7 @@ export default function Item({ id, initial, stock, title, price, img }) {
     <Card className={classes.root}>
       <Link className="link" to={"/item/" + id}>
         <CardActionArea>
-          <CardMedia className={classes.media} image={img} title="Item x" />
+          <CardMedia className={classes.media} image={img} title={title} />
           <CardContent>
             <Typography gutterBottom variant="h6" component="h2">
               {title}
