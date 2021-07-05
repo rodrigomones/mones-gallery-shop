@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial, onAdd, actualizarStock }) => {
   const [itemCount, setItemCount] = useState(1);
   const classes = useStyles();
 

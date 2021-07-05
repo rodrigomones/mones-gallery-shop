@@ -4,6 +4,7 @@ import { ItemListContainer } from "./containers/ItemListContainer";
 import { ItemDetailContainer } from "./containers/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import CheckOut from "./components/CheckOut";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             path="/item/:product_id"
             component={ItemDetailContainer}
           />
+          <CheckOut path="/cart" />
         </Switch>
       </div>
     </BrowserRouter>

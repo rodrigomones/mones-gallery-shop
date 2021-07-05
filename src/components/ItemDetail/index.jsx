@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 // import Card from "@material-ui/core/Card";
 // import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { ItemCount } from "../ItemCount";
 import "./style.scss";
+import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -27,17 +29,34 @@ const useStyles = makeStyles({
   media: {
     height: 200,
   },
+  btn: {
+    background: "#acbcfa",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(4, 64, 75, .2)",
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+    display: "block",
+    margin: "10px auto",
+  },
 });
 
 export default function ItemDetail({ productos }) {
   const classes = useStyles();
+  const [stock, setStock] = useState();
+
+  // function updateStock() {
+  //   setStock(stock - 1);
+  // }
 
   const onAdd = (itemCount) => {
-    if (itemCount > 1) {
-      alert(`Felicitaciones, compraste ${itemCount} copias!`);
-    } else {
-      alert("Felicitaciones, compraste una hermosa copia!");
-    }
+    setStock(itemCount);
+    // if (itemCount > 1) {
+    //   alert(`Felicitaciones, compraste ${itemCount} copias!`);
+    // } else {
+    //   alert("Felicitaciones, compraste una hermosa copia!");
+    // }
   };
 
   return (
@@ -54,11 +73,25 @@ export default function ItemDetail({ productos }) {
         <Typography variant="overline">
           Stock: {productos.available_quantity} <br />
         </Typography>
-        <ItemCount
-          stock={productos.available_quantity}
-          inital={productos.initial}
-          onAdd={onAdd}
-        />
+        {!stock ? (
+          <ItemCount
+            stock={productos.available_quantity}
+            inital={productos.initial}
+            onAdd={onAdd}
+            // actualizarStock={updateStock}
+          />
+        ) : (
+          <Link style={{ textDecoration: "none" }} to="/cart">
+            <Button
+              className={classes.btn}
+              variant="contained"
+              size="small"
+              color="primary"
+            >
+              Terminar Compra
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );
