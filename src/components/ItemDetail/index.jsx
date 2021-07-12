@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 export default function ItemDetail({ productos }) {
   const classes = useStyles();
   // const [stock, setStock] = useState();
-  const { addItem, setCart } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   // function updateStock() {
   //   setStock(stock - 1);

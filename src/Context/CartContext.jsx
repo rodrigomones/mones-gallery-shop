@@ -19,6 +19,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, { ...productos, qty: itemCount }]);
     }
+    getTotalQty();
   };
 
   const onRemove = (productos) => {
@@ -32,6 +33,7 @@ export const CartProvider = ({ children }) => {
         )
       );
     }
+    getTotalQty();
   };
 
   function removeFromCart(id) {
@@ -39,6 +41,7 @@ export const CartProvider = ({ children }) => {
       return obj.id !== id;
     });
     setCart(aux);
+    getTotalQty();
   }
 
   useEffect(() => {
@@ -47,7 +50,19 @@ export const CartProvider = ({ children }) => {
 
   function Clear() {
     setCart([]);
+    setQuantity(0);
   }
+
+  const getTotalQty = () => {
+    let total = cart.reduce((acc, cur) => {
+      return cur.qty + acc;
+    }, 0);
+    setQuantity(total);
+  };
+
+  useEffect(() => {
+    getTotalQty();
+  });
 
   useEffect(() => {
     const localCart = localStorage.getItem("cart");
