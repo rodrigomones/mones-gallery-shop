@@ -49,6 +49,16 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   }
 
+  useEffect(() => {
+    const localCart = localStorage.getItem("cart");
+    if (!localCart) localStorage.setItem("cart", JSON.stringify([]));
+    else setCart(JSON.parse(localCart));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const itemsPrice = cart.reduce((a, c) => a + c.price * c.qty, 0);
   const envioPrice = itemsPrice > 10000 ? 0 : 500;
   let totalPrice = itemsPrice + envioPrice;
