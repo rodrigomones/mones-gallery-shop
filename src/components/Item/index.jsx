@@ -25,13 +25,13 @@ const useStyles = makeStyles({
 export default function Item({ id, initial, stock, title, price, img }) {
   const classes = useStyles();
 
-  const onAdd = (itemCount) => {
-    if (itemCount > 1) {
-      alert(`Felicitaciones, compraste ${itemCount} copias!`);
-    } else {
-      alert("Felicitaciones, compraste una hermosa copia!");
-    }
-  };
+  // const onAdd = (itemCount) => {
+  //   if (itemCount > 1) {
+  //     alert(`Felicitaciones, compraste ${itemCount} copias!`);
+  //   } else {
+  //     alert("Felicitaciones, compraste una hermosa copia!");
+  //   }
+  // };
   return (
     <Card className={classes.root}>
       <Link className="link" to={"/item/" + id}>
@@ -50,7 +50,7 @@ export default function Item({ id, initial, stock, title, price, img }) {
           </CardContent>
         </CardActionArea>
       </Link>
-      <ItemCount stock={stock} inital={initial} onAdd={onAdd} />
+      {/* <ItemCount stock={stock} inital={initial} onAdd={onAdd} /> */}
       <CardActions>
         {/* <Button size="small" color="primary">
           Learn More

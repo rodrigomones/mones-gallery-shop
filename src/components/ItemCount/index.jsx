@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import AddIcon from "@material-ui/icons/Add";
@@ -7,6 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import "./style.scss";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { CartContext } from "../../Context/CartContext";
 
 const useStyles = makeStyles({
   root: {
@@ -27,7 +28,14 @@ const useStyles = makeStyles({
   },
 });
 
-export const ItemCount = ({ stock, initial, onAdd, actualizarStock }) => {
+export const ItemCount = ({
+  stock,
+  initial,
+  onAdd,
+  actualizarStock,
+  productos,
+}) => {
+  const { addItem } = useContext(CartContext);
   const [itemCount, setItemCount] = useState(1);
   const classes = useStyles();
 
@@ -67,7 +75,9 @@ export const ItemCount = ({ stock, initial, onAdd, actualizarStock }) => {
             variant="contained"
             size="small"
             color="secondary"
-            onClick={() => onAdd(itemCount)}
+            onClick={() => {
+              addItem(productos, itemCount);
+            }}
           >
             Añadir a carrito
           </Button>

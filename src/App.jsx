@@ -4,34 +4,37 @@ import { ItemListContainer } from "./containers/ItemListContainer";
 import { ItemDetailContainer } from "./containers/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import CheckOut from "./components/CheckOut";
+import { CartProvider } from "./Context/CartContext";
+import CartComponent from "./components/CartComponent";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Carousel
-              titulo={"LAS MEJORES OFERTAS"}
-              subtitulo={"Encontrá todo lo que necesites en un solo lugar"}
+    <CartProvider value={[]}>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Carousel
+                titulo={"LAS MEJORES OFERTAS"}
+                subtitulo={"Envío gratis gastando más de $10000!"}
+              />
+              <ItemListContainer />
+            </Route>
+            <Route path="/category/:category_id">
+              <Carousel />
+              <ItemListContainer greeting={"Listado de productos"} />
+            </Route>
+            <Route
+              exact
+              path="/item/:product_id"
+              component={ItemDetailContainer}
             />
-            <ItemListContainer />
-          </Route>
-          <Route path="/category/:category_id">
-            <Carousel />
-            <ItemListContainer greeting={"Listado de productos"} />
-          </Route>
-          <Route
-            exact
-            path="/item/:product_id"
-            component={ItemDetailContainer}
-          />
-          <CheckOut path="/cart" />
-        </Switch>
-      </div>
-    </BrowserRouter>
+            <CartComponent path="/cart" />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
