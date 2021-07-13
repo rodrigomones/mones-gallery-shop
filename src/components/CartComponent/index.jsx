@@ -5,13 +5,13 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import ReceiptIcon from "@material-ui/icons/Receipt";
-import CancelIcon from "@material-ui/icons/Cancel";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { CartContext } from "../../Context/CartContext";
-import { ItemCount } from "../ItemCount";
-import { Button, Card, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
 import "./cart.scss";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -36,6 +36,7 @@ const useStyles = makeStyles({
   },
   delete: {
     position: "absolute",
+    left: 200,
   },
   cantidad: {
     fontSize: "14px",
@@ -45,6 +46,20 @@ const useStyles = makeStyles({
   },
   grilla: {
     border: "1px solid black",
+  },
+  buttonBack: {
+    display: "flex",
+  },
+  link: {
+    textDecoration: "none",
+    position: "absolute",
+  },
+  text: {
+    position: "absolute",
+    right: 0,
+    fontSize: 20,
+    backgroundColor: "black",
+    color: "white",
   },
 });
 
@@ -57,7 +72,6 @@ export default function CartComponent({ productos }) {
     envioPrice,
     Clear,
     removeFromCart,
-    quantity,
   } = useContext(CartContext);
   const classes = useStyles();
 
@@ -70,6 +84,16 @@ export default function CartComponent({ productos }) {
 
   return (
     <div className={classes.root}>
+      <Link className={classes.link} to={"/"}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.buttonBack}
+          startIcon={<ArrowBackIcon />}
+        >
+          Volver Al Home
+        </Button>
+      </Link>
       {cart.length === 0 && (
         <div
           style={{
@@ -77,7 +101,7 @@ export default function CartComponent({ productos }) {
             backgroundRepeat: "no-repeat",
           }}
         >
-          El carrito está vacío
+          <span className={classes.text}>El carrito está vacío</span>
         </div>
       )}
       {cart.map((element, index) => {
@@ -97,14 +121,14 @@ export default function CartComponent({ productos }) {
               <Typography variant="body2" color="textSecondary" component="p">
                 {element.description}
               </Typography>
-              <button onClick={() => addItem(element)}>
-                <AddCircleIcon color="primary" />
+              <button onClick={() => onRemove(element)}>
+                <RemoveCircleOutlineIcon color="secondary" />
               </button>
               <Typography className={classes.cantidad} variant="overline">
                 Cantidad: {element.qty}
               </Typography>
-              <button onClick={() => onRemove(element)}>
-                <RemoveCircleOutlineIcon color="secondary" />
+              <button onClick={() => addItem(element)}>
+                <AddCircleIcon color="primary" />
               </button>
               <button onClick={() => removeFromCart(element.id)}>
                 <Button
@@ -134,7 +158,7 @@ export default function CartComponent({ productos }) {
           </button>
           <button
             className={classes.checkout}
-            onClick={() => alert("Apretaste Checkout")}
+            onClick={() => alert("Apretaste Checkout", Clear())}
           >
             {" "}
             <Button
