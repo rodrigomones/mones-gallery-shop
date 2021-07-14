@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { getFirestore } from "../firebase/client";
 
 export const CartContext = createContext();
 
@@ -7,6 +8,22 @@ const { Provider } = CartContext;
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [listProductos, setListProductos] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const DB = getFirestore();
+      const COLLECTION = DB.collection("productos");
+      // const ITEM = COLLECTION.doc(productosId);
+      const RESPONSE = await COLLECTION.get();
+      setListProductos(
+        RESPONSE.docs.map((element) => {
+          return { id: element.id, ...element.data() };
+        })
+      );
+    }
+    getData();
+  }, []);
 
   const addItem = (productos, itemCount) => {
     let exist = cart.find((x) => x.id === productos.id);
@@ -91,6 +108,7 @@ export const CartProvider = ({ children }) => {
         totalPrice,
         envioPrice,
         removeFromCart,
+        listProductos,
       }}
     >
       {children}

@@ -49,6 +49,7 @@ export default function ItemDetail({ productos }) {
   const onAdd = (itemCount) => {
     addItem(productos, itemCount);
   };
+  console.log(productos);
   return (
     <div className={classes.root}>
       <img className="img" src={productos.thumbnail} alt={productos.title} />

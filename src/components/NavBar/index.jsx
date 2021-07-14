@@ -26,7 +26,7 @@ export const NavBar = () => {
           </Link>
           <NavLink
             className="btn1"
-            to="/category/zapatillas"
+            to="/category/35mm-h"
             activeStyle={{
               fontWeight: "bold",
               backgroundColor: "#0badce",
@@ -36,7 +36,7 @@ export const NavBar = () => {
           </NavLink>
           <NavLink
             className="btn2"
-            to="/category/celulares"
+            to="/category/35mm-v"
             activeStyle={{
               fontWeight: "bold",
               backgroundColor: "#0badce",
@@ -46,7 +46,7 @@ export const NavBar = () => {
           </NavLink>
           <NavLink
             className="btn3"
-            to="/category/televisores"
+            to="/category/120film"
             activeStyle={{
               fontWeight: "bold",
               backgroundColor: "#0badce",
