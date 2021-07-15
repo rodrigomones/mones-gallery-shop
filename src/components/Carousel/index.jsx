@@ -24,12 +24,12 @@ const Carousel = (props) => {
   } = props;
   let pathnames = pathname.split("/").filter((x) => x);
   var imagen;
-  if (pathnames.includes("zapatillas")) {
-    imagen = "zapatillas1.jpeg";
-  } else if (pathnames.includes("celulares")) {
-    imagen = "iphone12.jpeg";
-  } else if (pathnames.includes("televisores")) {
-    imagen = "tv1.jpg";
+  if (pathnames.includes("35mm-h")) {
+    imagen = "horizontal.png";
+  } else if (pathnames.includes("35mm-v")) {
+    imagen = "vertical.png";
+  } else if (pathnames.includes("120film")) {
+    imagen = "cuadrada.png";
   } else {
     imagen = "intro1.jpg";
   }

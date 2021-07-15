@@ -23,7 +23,7 @@ function App() {
             </Route>
             <Route path="/category/:category_id">
               <Carousel />
-              <ItemListContainer greeting={"Listado de productos"} />
+              <ItemListContainer greeting={""} />
             </Route>
             <Route
               exact

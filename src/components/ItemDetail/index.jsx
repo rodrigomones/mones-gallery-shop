@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { ItemCount } from "../ItemCount";
 import "./style.scss";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
 const useStyles = makeStyles({
@@ -35,12 +35,21 @@ const useStyles = makeStyles({
     display: "block",
     margin: "10px auto",
   },
+  btn_volver: {
+    position: "absolute",
+    top: "-30px",
+  },
 });
 
 export default function ItemDetail({ productos }) {
   const classes = useStyles();
   // const [stock, setStock] = useState();
   const { addItem } = useContext(CartContext);
+
+  const history = useHistory();
+  const handleUrl = () => {
+    history.push(`/category/${productos.category}`);
+  };
 
   // function updateStock() {
   //   setStock(stock - 1);
@@ -52,6 +61,9 @@ export default function ItemDetail({ productos }) {
   console.log(productos);
   return (
     <div className={classes.root}>
+      <Button className={classes.btn_volver} onClick={handleUrl}>
+        Vovler
+      </Button>
       <img className="img" src={productos.thumbnail} alt={productos.title} />
       <div className="detail__item">
         <Typography gutterBottom variant="h6" component="h2">

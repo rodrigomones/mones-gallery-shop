@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   },
   media: {
     margin: "auto",
-    width: "100%",
+    height: "80vh",
   },
   delete: {
     position: "absolute",
