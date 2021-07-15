@@ -32,7 +32,7 @@ export const NavBar = () => {
               backgroundColor: "#0badce",
             }}
           >
-            <Button style={{ color: "secondary" }}>Zapatillas ↕</Button>
+            <Button style={{ color: "secondary" }}>35mm ↕</Button>
           </NavLink>
           <NavLink
             className="btn2"
@@ -42,7 +42,7 @@ export const NavBar = () => {
               backgroundColor: "#0badce",
             }}
           >
-            <Button style={{ color: "secondary" }}>Celulares ↔</Button>
+            <Button style={{ color: "secondary" }}>35mm ↔</Button>
           </NavLink>
           <NavLink
             className="btn3"
@@ -52,7 +52,7 @@ export const NavBar = () => {
               backgroundColor: "#0badce",
             }}
           >
-            <Button style={{ color: "secondary" }}>Televisores</Button>
+            <Button style={{ color: "secondary" }}>120film</Button>
           </NavLink>
           <CartWidget />
           <IconButton className="burger" aria-label="menu">

@@ -26,16 +26,12 @@ export const ItemDetailContainer = (props) => {
   // }, [product_id]);
 
   useEffect(() => {
-    const waitForData = async () => {
-      let data = await listProductos.filter(
-        (item) => item.id == `${product_id}`
-      );
-      let aux = data.map((element) => element);
-      setProductos(aux);
-    };
-    waitForData();
+    if (product_id) {
+      const result = listProductos.find((element) => element.id == product_id);
+      setProductos(result);
+    }
   }, [product_id]);
-
+  console.log(productos);
   return (
     <>
       {productos.length !== 0 ? (

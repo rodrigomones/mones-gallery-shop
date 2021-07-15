@@ -30,7 +30,7 @@ export const ItemListContainer = (props) => {
     };
     waitForData();
   }, [category_id]);
-  console.log(productos);
+
   return (
     <>
       <div className="container">

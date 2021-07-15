@@ -9,7 +9,6 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [listProductos, setListProductos] = useState([]);
-
   useEffect(() => {
     async function getData() {
       const DB = getFirestore();
@@ -24,6 +23,7 @@ export const CartProvider = ({ children }) => {
     }
     getData();
   }, []);
+  console.log(listProductos);
 
   const addItem = (productos, itemCount) => {
     let exist = cart.find((x) => x.id === productos.id);
