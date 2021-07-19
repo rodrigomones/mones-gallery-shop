@@ -101,8 +101,8 @@ export const CartProvider = ({ children }) => {
     batch.commit().then(() => {
       Clear();
     });
+    console.log(order);
   };
-  console.log(compraId);
   useEffect(() => {
     const localCart = localStorage.getItem("cart");
     if (!localCart) localStorage.setItem("cart", JSON.stringify([]));
