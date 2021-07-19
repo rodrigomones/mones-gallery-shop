@@ -6,6 +6,7 @@ import { NavBar } from "./components/NavBar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { CartProvider } from "./Context/CartContext";
 import CartComponent from "./components/CartComponent";
+import { Checkout } from "./components/CheckOut";
 
 function App() {
   return (
@@ -19,7 +20,6 @@ function App() {
                 titulo={"LAS MEJORES OFERTAS"}
                 subtitulo={"Envío gratis gastando más de $10000!"}
               />
-              <ItemListContainer />
             </Route>
             <Route path="/category/:category_id">
               <Carousel />
@@ -31,6 +31,7 @@ function App() {
               component={ItemDetailContainer}
             />
             <CartComponent path="/cart" />
+            <Checkout path="/checkout" />
           </Switch>
         </div>
       </BrowserRouter>

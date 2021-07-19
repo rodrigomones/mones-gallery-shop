@@ -14,7 +14,7 @@ export const ItemListContainer = (props) => {
   useEffect(() => {
     const waitForData = async () => {
       let data = await listProductos.filter(
-        (item) => item.category == `${category_id}`
+        (item) => item.category === `${category_id}`
       );
       let aux = data.map((element) => {
         return {
@@ -29,7 +29,7 @@ export const ItemListContainer = (props) => {
       setProductos(aux);
     };
     waitForData();
-  }, [category_id]);
+  }, [category_id, listProductos]);
 
   return (
     <>

@@ -32,7 +32,7 @@ export const NavBar = () => {
               backgroundColor: "#0badce",
             }}
           >
-            <Button style={{ color: "secondary" }}>35mm ↕</Button>
+            <Button style={{ color: "secondary" }}>35mm ↔</Button>
           </NavLink>
           <NavLink
             className="btn2"
@@ -42,7 +42,7 @@ export const NavBar = () => {
               backgroundColor: "#0badce",
             }}
           >
-            <Button style={{ color: "secondary" }}>35mm ↔</Button>
+            <Button style={{ color: "secondary" }}>35mm ↕</Button>
           </NavLink>
           <NavLink
             className="btn3"

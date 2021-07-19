@@ -27,7 +27,7 @@ export const ItemDetailContainer = (props) => {
 
   useEffect(() => {
     if (product_id) {
-      const result = listProductos.find((element) => element.id == product_id);
+      const result = listProductos.find((element) => element.id === product_id);
       setProductos(result);
     }
   }, [product_id]);

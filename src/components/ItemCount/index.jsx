@@ -11,13 +11,12 @@ import { CartContext } from "../../Context/CartContext";
 
 const useStyles = makeStyles({
   root: {
-    background: "#0e93f2",
     border: 0,
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(4, 64, 75, .2)",
     color: "white",
     height: 48,
-    padding: "0 30px",
+    padding: "0 10px",
     display: "block",
     margin: "10px auto",
   },
@@ -73,8 +72,8 @@ export const ItemCount = ({
           <Button
             className={classes.root}
             variant="contained"
+            color="primary"
             size="small"
-            color="secondary"
             onClick={() => {
               addItem(productos, itemCount);
             }}

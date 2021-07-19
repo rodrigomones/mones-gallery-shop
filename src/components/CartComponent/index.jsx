@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
@@ -7,61 +6,13 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { CartContext } from "../../Context/CartContext";
-import { Button, Typography } from "@material-ui/core";
+import { Button, CssBaseline, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-
-import "./cart.scss";
+import Paper from "@material-ui/core/Paper";
+import ButtonBase from "@material-ui/core/ButtonBase";
+import ModalImage from "react-modal-image";
+import useStyles from "./styles";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles({
-  root: {
-    marginTop: "15vh",
-    backgroundColor: "#FFFFF9",
-    maxWidth: "80vw",
-    height: "fit-content",
-    display: "grid",
-    gridTemplateColumns: "1.5fr 0.5fr",
-    gridTemplateRows: "auto",
-    rowGap: "30px",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    margin: "auto",
-  },
-  media: {
-    margin: "auto",
-    height: "80vh",
-  },
-  delete: {
-    position: "absolute",
-    left: 200,
-  },
-  cantidad: {
-    fontSize: "14px",
-  },
-  checkout: {
-    margin: "auto",
-  },
-  grilla: {
-    border: "1px solid black",
-  },
-  buttonBack: {
-    display: "flex",
-  },
-  link: {
-    textDecoration: "none",
-    position: "absolute",
-  },
-  text: {
-    position: "absolute",
-    right: 0,
-    fontSize: 20,
-    backgroundColor: "black",
-    color: "white",
-  },
-});
 
 export default function CartComponent({ productos }) {
   const {
@@ -83,10 +34,10 @@ export default function CartComponent({ productos }) {
   // };
 
   return (
-    <div className={classes.root}>
+    <>
+      <CssBaseline />
       <Link className={classes.link} to={"/"}>
         <Button
-          variant="contained"
           color="primary"
           className={classes.buttonBack}
           startIcon={<ArrowBackIcon />}
@@ -94,98 +45,156 @@ export default function CartComponent({ productos }) {
           Volver Al Home
         </Button>
       </Link>
-      {cart.length === 0 && (
-        <div
-          style={{
-            backgroundImage: `url("https://lukaszadam.com/assets/downloads/guy_on_desk.svg")`,
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <span className={classes.text}>El carrito está vacío</span>
-        </div>
-      )}
-      {cart.map((element, index) => {
-        return (
-          <>
-            <img
-              className={classes.media}
-              src={element.thumbnail}
-              alt={element.title}
-            />
-            <div className="detail__item">
-              <span key={index}></span>
-              <Typography gutterBottom variant="h6" component="h2">
-                {element.title} <br />
-              </Typography>
-              <Typography variant="h4">${element.price} </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {element.description}
-              </Typography>
-              <button onClick={() => onRemove(element)}>
-                <RemoveCircleOutlineIcon color="secondary" />
-              </button>
-              <Typography className={classes.cantidad} variant="overline">
-                Cantidad: {element.qty}
-              </Typography>
-              <button onClick={() => addItem(element)}>
-                <AddCircleIcon color="primary" />
-              </button>
-              <button onClick={() => removeFromCart(element.id)}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.button}
-                  startIcon={<DeleteIcon />}
-                >
-                  Delete
-                </Button>
-              </button>
+      <div className={classes.root1}>
+        {cart.length === 0 && (
+          <div
+            style={{
+              backgroundImage: `url("../../images/vacio.jpg")`,
+              backgroundRepeat: "no-repeat",
+              position: "fixed",
+              minWidth: "100%",
+              minHeight: "100%",
+              backgroundSize: "100%",
+              backgroundPosition: "center",
+            }}
+          >
+            <span className={classes.text}>El carrito está vacío</span>
+          </div>
+        )}
+        <Typography variant="h6" style={{ textAlign: "center" }}>
+          CART LIST ITEMS
+        </Typography>
+        {cart.map((element, index) => {
+          return (
+            <div className={classes.root}>
+              <Paper className={classes.paper}>
+                <Grid container spacing={2}>
+                  <Grid item>
+                    <ButtonBase className={classes.image}>
+                      <ModalImage
+                        small={element.thumbnail}
+                        className={classes.img}
+                        large={element.thumbnail}
+                        alt={element.title}
+                        hideDownload={true}
+                        hideZoom={true}
+                      />
+                    </ButtonBase>
+                  </Grid>
+                  <Grid item xs={12} sm container>
+                    <Grid item xs={6}>
+                      <Typography key={index}></Typography>
+                      <Typography gutterBottom variant="h6" component="h2">
+                        {element.title} <br />
+                      </Typography>
+
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                        gutterBottom
+                      >
+                        {element.description} Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Ratione provident
+                        voluptas.
+                      </Typography>
+                    </Grid>
+
+                    <Grid item xs={6}>
+                      <div className={classes.counter}>
+                        <Typography variant="h4" gutterBottom>
+                          ${element.price * element.qty}{" "}
+                        </Typography>
+                      </div>
+                    </Grid>
+                    <Grid item xs={3}>
+                      <button
+                        className={classes.button}
+                        onClick={() => removeFromCart(element.id)}
+                      >
+                        <Button
+                          color="secondary"
+                          startIcon={<DeleteIcon />}
+                          style={{ justifyContent: "flex-start" }}
+                        ></Button>
+                      </button>
+                    </Grid>
+                    <Grid item xs={9}>
+                      <div className={classes.counter}>
+                        <Typography
+                          className={classes.cantidad}
+                          variant="overline"
+                        >
+                          Cantidad:
+                        </Typography>
+                        <button
+                          className={classes.button}
+                          onClick={() => onRemove(element)}
+                        >
+                          <RemoveCircleOutlineIcon color="primary" />
+                        </button>
+                        <Typography
+                          className={classes.cantidad_num}
+                          variant="h5"
+                        >
+                          {element.qty}
+                        </Typography>
+                        <button
+                          className={classes.button}
+                          onClick={() => addItem(element)}
+                        >
+                          <AddCircleIcon color="primary" />
+                        </button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Paper>
             </div>
+          );
+        })}
+        {cart.length !== 0 && (
+          <>
+            <Paper className={classes.paper}>
+              <Grid
+                container
+                direction="column"
+                alignItems="flex-end"
+                xs={12}
+                spacing={1}
+              >
+                <Grid item xs={6}>
+                  <Typography variant="overline">
+                    Envío: ${envioPrice}
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="h6">Total: ${totalPrice}</Typography>
+                </Grid>
+                <Grid item>
+                  <button className={classes.button} onClick={Clear}>
+                    <Button color="secondary" startIcon={<DeleteForeverIcon />}>
+                      Vaciar Cart
+                    </Button>
+                  </button>
+                  <Link to={"/checkout"}>
+                    <button className={classes.button} onClick={""}>
+                      {" "}
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<ReceiptIcon />}
+                      >
+                        Checkout
+                      </Button>
+                    </button>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Paper>
           </>
-        );
-      })}
-      {cart.length !== 0 && (
-        <>
-          <button className={classes.delete} onClick={Clear}>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<DeleteForeverIcon />}
-            >
-              Vaciar Cart
-            </Button>
-          </button>
-          <button
-            className={classes.checkout}
-            onClick={() => alert("Apretaste Checkout", Clear())}
-          >
-            {" "}
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              startIcon={<ReceiptIcon />}
-            >
-              Checkout
-            </Button>
-          </button>
-          <Grid
-            className={classes.grilla}
-            container
-            direction="column"
-            alignItems="flex-end"
-            spacing={1}
-          >
-            <Grid item xs={6}>
-              <Typography variant="overline">Envío: ${envioPrice}</Typography>
-            </Grid>
-            <Grid item xs={10}>
-              <Typography variant="h6">Total: ${totalPrice}</Typography>
-            </Grid>
-          </Grid>
-        </>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }

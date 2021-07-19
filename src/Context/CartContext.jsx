@@ -9,6 +9,8 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [listProductos, setListProductos] = useState([]);
+  const [compraId, setCompraId] = useState("");
+
   useEffect(() => {
     async function getData() {
       const DB = getFirestore();
@@ -23,7 +25,6 @@ export const CartProvider = ({ children }) => {
     }
     getData();
   }, []);
-  console.log(listProductos);
 
   const addItem = (productos, itemCount) => {
     let exist = cart.find((x) => x.id === productos.id);
@@ -81,6 +82,27 @@ export const CartProvider = ({ children }) => {
     getTotalQty();
   });
 
+  const createOrder = (datosEnvio) => {
+    const order = { buyer: datosEnvio, item: cart, total: totalPrice };
+    const db = getFirestore();
+    db.collection("orders")
+      .add(order)
+      .then(({ id }) => {
+        setCompraId(id);
+      });
+
+    let batch = db.batch();
+    let itemsRef = db.collection("productos");
+    cart.forEach((obj) => {
+      batch.update(itemsRef.doc(obj.id), {
+        available_quantity: obj.available_quantity - quantity,
+      });
+    });
+    batch.commit().then(() => {
+      Clear();
+    });
+  };
+  console.log(compraId);
   useEffect(() => {
     const localCart = localStorage.getItem("cart");
     if (!localCart) localStorage.setItem("cart", JSON.stringify([]));
@@ -109,6 +131,8 @@ export const CartProvider = ({ children }) => {
         envioPrice,
         removeFromCart,
         listProductos,
+        createOrder,
+        compraId,
       }}
     >
       {children}
