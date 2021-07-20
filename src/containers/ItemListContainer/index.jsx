@@ -1,7 +1,6 @@
 import { Typography } from "@material-ui/core";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { getData } from "../../utils";
 import { ItemListComponent } from "../../components/ItemListComponent";
 import "./style.scss";
 import { CartContext } from "../../Context/CartContext";

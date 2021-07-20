@@ -6,7 +6,7 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { CartContext } from "../../Context/CartContext";
-import { Button, CssBaseline, Typography } from "@material-ui/core";
+import { Button, CssBaseline, IconButton, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ButtonBase from "@material-ui/core/ButtonBase";
@@ -26,25 +26,18 @@ export default function CartComponent({ productos }) {
   } = useContext(CartContext);
   const classes = useStyles();
 
-  // const onAdd = (productos, qty) => {
-  //   addItem(productos, qty);
-  // };
-  // const Borrar = (productos, quantity) => {
-  //   onRemove(productos.id);
-  // };
-
   return (
     <>
       <CssBaseline />
-      <Link className={classes.link} to={"/"}>
-        <Button
-          color="primary"
-          className={classes.buttonBack}
-          startIcon={<ArrowBackIcon />}
-        >
-          Volver Al Home
-        </Button>
-      </Link>
+      <Button
+        component={Link}
+        to={"/"}
+        color="primary"
+        className={classes.buttonBack}
+        startIcon={<ArrowBackIcon />}
+      >
+        Volver Al Home
+      </Button>
       <div className={classes.root1}>
         {cart.length === 0 && (
           <div
@@ -108,16 +101,14 @@ export default function CartComponent({ productos }) {
                       </div>
                     </Grid>
                     <Grid item xs={3}>
-                      <button
-                        className={classes.button}
+                      <IconButton
+                        size="small"
                         onClick={() => removeFromCart(element.id)}
+                        color="secondary"
+                        style={{ justifyContent: "flex-start" }}
                       >
-                        <Button
-                          color="secondary"
-                          startIcon={<DeleteIcon />}
-                          style={{ justifyContent: "flex-start" }}
-                        ></Button>
-                      </button>
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
                     </Grid>
                     <Grid item xs={9}>
                       <div className={classes.counter}>
@@ -172,23 +163,22 @@ export default function CartComponent({ productos }) {
                   <Typography variant="h6">Total: ${totalPrice}</Typography>
                 </Grid>
                 <Grid item>
-                  <button className={classes.button} onClick={Clear}>
-                    <Button color="secondary" startIcon={<DeleteForeverIcon />}>
-                      Vaciar Cart
-                    </Button>
-                  </button>
-                  <Link to={"/checkout"}>
-                    <button className={classes.button} onClick={""}>
-                      {" "}
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        startIcon={<ReceiptIcon />}
-                      >
-                        Checkout
-                      </Button>
-                    </button>
-                  </Link>
+                  <Button
+                    onClick={Clear}
+                    color="secondary"
+                    startIcon={<DeleteForeverIcon />}
+                  >
+                    Vaciar Cart
+                  </Button>
+                  <Button
+                    component={Link}
+                    to={"/checkout"}
+                    variant="contained"
+                    color="primary"
+                    startIcon={<ReceiptIcon />}
+                  >
+                    Checkout
+                  </Button>
                 </Grid>
               </Grid>
             </Paper>

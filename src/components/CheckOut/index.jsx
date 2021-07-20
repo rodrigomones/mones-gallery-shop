@@ -84,18 +84,3 @@ export const Checkout = () => {
     </>
   );
 };
-
-// <div className="orden">
-//   <input type="name" placeholder="Nombre"></input>
-//   <input type="email" placeholder="Email"></input>
-//   <input type="tel" placeholder="Teléfono"></input>
-//   {cart.map((element, index) => {
-//     return (
-//       <ul>
-//         <li>
-//           <Typography>{element.price}</Typography>
-//         </li>
-//       </ul>
-//     );
-//   })}
-// </div>

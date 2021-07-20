@@ -4,7 +4,6 @@ import CircularDeterminate from "../../components/Spinner";
 import { useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { CartContext } from "../../Context/CartContext";
-// import "./style.scss";
 
 const useStyles = makeStyles({
   root: {
@@ -30,7 +29,7 @@ export const ItemDetailContainer = (props) => {
       const result = listProductos.find((element) => element.id === product_id);
       setProductos(result);
     }
-  }, [product_id]);
+  }, [listProductos, product_id]);
   console.log(productos);
   return (
     <>

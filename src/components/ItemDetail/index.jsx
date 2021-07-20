@@ -9,17 +9,12 @@ import useStyles from "./styles";
 
 export default function ItemDetail({ productos }) {
   const classes = useStyles();
-  // const [stock, setStock] = useState();
   const { addItem } = useContext(CartContext);
 
   const history = useHistory();
   const handleUrl = () => {
     history.push(`/category/${productos.category}`);
   };
-
-  // function updateStock() {
-  //   setStock(stock - 1);
-  // }
 
   const onAdd = (itemCount) => {
     addItem(productos, itemCount);

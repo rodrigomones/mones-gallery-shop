@@ -25,7 +25,7 @@ export default makeStyles((theme) => ({
     maxWidth: "128px",
     maxHeight: "128px",
   },
-  link: {
+  buttonBack: {
     textDecoration: "none",
     position: "absolute",
     left: 40,

@@ -15,7 +15,6 @@ export const CartProvider = ({ children }) => {
     async function getData() {
       const DB = getFirestore();
       const COLLECTION = DB.collection("productos");
-      // const ITEM = COLLECTION.doc(productosId);
       const RESPONSE = await COLLECTION.get();
       setListProductos(
         RESPONSE.docs.map((element) => {

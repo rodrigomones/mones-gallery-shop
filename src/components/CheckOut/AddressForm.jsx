@@ -48,6 +48,7 @@ const AddressForm = ({ next }) => {
             <TextField
               required
               label="Código Postal"
+              type="number"
               onInput={(e) => {
                 setCodigoPostal(e.target.value);
               }}
@@ -57,6 +58,7 @@ const AddressForm = ({ next }) => {
             <TextField
               required
               label="Email"
+              type="email"
               onInput={(e) => {
                 setEmail(e.target.value);
               }}
@@ -66,6 +68,7 @@ const AddressForm = ({ next }) => {
             <TextField
               required
               label="Teléfono"
+              type="number"
               onInput={(e) => {
                 setTelefono(e.target.value);
               }}
@@ -81,7 +84,12 @@ const AddressForm = ({ next }) => {
             variant="contained"
             color="primary"
             disabled={
-              (!nombre, !ciudad, !codigoPostal, !direccion, !email, !telefono)
+              !nombre ||
+              !ciudad ||
+              !codigoPostal ||
+              !direccion ||
+              !email ||
+              !telefono
             }
             onClick={() =>
               next(nombre, ciudad, codigoPostal, direccion, email, telefono)

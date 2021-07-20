@@ -8,11 +8,17 @@ import {
   ListItemAvatar,
   Avatar,
 } from "@material-ui/core";
-import { useContext } from "react";
+import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
+import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 
 const PaymentForm = ({ backStep, datosEnvio, nextStep }) => {
   const { cart, totalPrice, envioPrice, createOrder } = useContext(CartContext);
+  const [medioDePago, setMedioDePago] = useState();
+
+  const handleChange = (event, newMedioDePago) => {
+    setMedioDePago(newMedioDePago);
+  };
 
   return (
     <>
@@ -49,13 +55,43 @@ const PaymentForm = ({ backStep, datosEnvio, nextStep }) => {
       </List>
       <Divider />
       <Typography variant="h6" gutterBottom style={{ margin: "20px 0" }}>
-        Metodo de Pago
+        Metodo de Pago*
       </Typography>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <ToggleButtonGroup value={medioDePago} exclusive onChange={handleChange}>
+        <ToggleButton value="left">
+          <img
+            src="../images/visa-01.png"
+            style={{ maxWidth: "40px" }}
+            alt="visa"
+          />
+        </ToggleButton>
+        <ToggleButton value="center">
+          <img
+            src="../images/mastercard-01.png"
+            style={{ maxWidth: "40px" }}
+            alt="visa"
+          />
+        </ToggleButton>
+        <ToggleButton value="right">
+          <img
+            src="../images/mercadopago-01.png"
+            style={{ maxWidth: "40px" }}
+            alt="visa"
+          />
+        </ToggleButton>
+      </ToggleButtonGroup>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "32px",
+        }}
+      >
         <Button variant="outlined" onClick={backStep}>
           Volver
         </Button>
         <Button
+          disabled={!medioDePago}
           variant="contained"
           color="primary"
           onClick={() => {
