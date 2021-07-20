@@ -25,11 +25,11 @@ const Carousel = (props) => {
   let pathnames = pathname.split("/").filter((x) => x);
   var imagen;
   if (pathnames.includes("35mm-h")) {
-    imagen = "horizontal.png";
+    imagen = "horizontal.jpg";
   } else if (pathnames.includes("35mm-v")) {
-    imagen = "vertical.png";
+    imagen = "vertical.jpg";
   } else if (pathnames.includes("120film")) {
-    imagen = "cuadrada.png";
+    imagen = "cuadrada.jpg";
   } else {
     imagen = "intro1.jpg";
   }
