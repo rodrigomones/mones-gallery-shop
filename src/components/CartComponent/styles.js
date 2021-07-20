@@ -33,8 +33,10 @@ export default makeStyles((theme) => ({
     zIndex: 99,
   },
   text: {
-    lineHeight: 5,
-    fontSize: "3rem",
+    position: "absolute",
+    lineHeight: 2,
+    right: "40%",
+    fontSize: "2rem",
   },
   cantidad_num: {
     width: "40px",

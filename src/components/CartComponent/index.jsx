@@ -48,15 +48,11 @@ export default function CartComponent({ productos }) {
               minWidth: "100%",
               minHeight: "100%",
               backgroundSize: "100%",
-              backgroundPosition: "center",
             }}
           >
             <span className={classes.text}>El carrito está vacío</span>
           </div>
         )}
-        <Typography variant="h6" style={{ textAlign: "center" }}>
-          CART LIST ITEMS
-        </Typography>
         {cart.map((element, index) => {
           return (
             <div className={classes.root}>
