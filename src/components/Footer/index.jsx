@@ -16,38 +16,40 @@ export const Footer = () => {
         <Container maxWidth="lg">
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>Site map</Box>
+              <Box borderBottom={1} fontSize="20px">
+                Site map
+              </Box>
               <Link
                 component={Ruta}
                 to="/"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="h6">Home</Typography>
+                <Typography>Home</Typography>
               </Link>
               <Link
                 component={Ruta}
                 to="/category/35mm-h"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="h6">35mm</Typography>
+                <Typography>35mm</Typography>
               </Link>
               <Link
                 component={Ruta}
                 to="/category/35mm-v"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="h6">35mm</Typography>
+                <Typography>35mm</Typography>
               </Link>
               <Link
                 component={Ruta}
                 to="/category/120film"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="h6">120mm</Typography>
+                <Typography>120mm</Typography>
               </Link>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box borderBottom={1} mb={3}>
+              <Box borderBottom={1} mb={2} fontSize="20px">
                 Redes sociales
               </Box>
               <Link
@@ -80,14 +82,16 @@ export const Footer = () => {
               </Link>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box borderBottom={1}>Website</Box>
+              <Box borderBottom={1} fontSize="20px">
+                Website
+              </Box>
               <Link
                 href="https://www.monesrodrigo.com"
                 target="_blank"
                 rel="noopener"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="h6">monesrodrigo.com</Typography>
+                <Typography>monesrodrigo.com</Typography>
               </Link>
             </Grid>
           </Grid>
