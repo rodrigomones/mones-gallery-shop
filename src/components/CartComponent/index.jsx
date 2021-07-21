@@ -40,16 +40,18 @@ export default function CartComponent({ productos }) {
       </Button>
       <div className={classes.root1}>
         {cart.length === 0 && (
-          <div
-            style={{
-              backgroundImage: `url("../../images/vacio.jpg")`,
-              backgroundRepeat: "no-repeat",
-              position: "fixed",
-              minWidth: "100%",
-              minHeight: "100%",
-              backgroundSize: "100%",
-            }}
-          >
+          <div>
+            <img
+              src="../../images/vacio.jpg"
+              alt="Carrito vacío"
+              style={{
+                backgroundRepeat: "no-repeat",
+                position: "relative",
+                minWidth: "100%",
+                minHeight: "100%",
+                backgroundSize: "100%",
+              }}
+            />
             <span className={classes.text}>El carrito está vacío</span>
           </div>
         )}
@@ -142,7 +144,7 @@ export default function CartComponent({ productos }) {
         })}
         {cart.length !== 0 && (
           <>
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} style={{ marginBottom: 100 }}>
               <Grid
                 container
                 direction="column"

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { CartProvider } from "./Context/CartContext";
 import CartComponent from "./components/CartComponent";
 import { Checkout } from "./components/CheckOut";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <CartComponent path="/cart" />
             <Checkout path="/checkout" />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     </CartProvider>

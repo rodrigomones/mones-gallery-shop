@@ -34,8 +34,9 @@ export default makeStyles((theme) => ({
   },
   text: {
     position: "absolute",
-    lineHeight: 2,
+    //lineHeight: 2,
     right: "40%",
+    top: 80,
     fontSize: "2rem",
   },
   cantidad_num: {
