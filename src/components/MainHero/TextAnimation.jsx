@@ -53,7 +53,7 @@ const Wrapper = styled.span`
   display: inline-block;
   span {
     font-family: "Rubik";
-    font-size: calc(2000vw / 1920 * 10);
+    font-size: calc(1200vw / 1920 * 10);
     font-weight: 400;
     display: inline-block;
     opacity: 0;

@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   root: {
     position: "absolute",
     top: "130px",
-    fontSize: "calc(1500vw / 1920 * 10)",
+    fontSize: "calc(1200vw / 1920 * 10)",
     marginLeft: "10vw",
     fontFamily: "Rubik",
     fontWeight: 700,
