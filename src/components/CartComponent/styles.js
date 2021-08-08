@@ -16,8 +16,8 @@ export default makeStyles((theme) => ({
     alignContent: "space-between",
   },
   image: {
-    minWidth: 128,
-    maxHeight: 128,
+    minWidth: "128px",
+    maxHeight: "128px",
   },
   img: {
     margin: "auto",
