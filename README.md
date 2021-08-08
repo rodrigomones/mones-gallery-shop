@@ -4,14 +4,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Sobre el proyecto
 
-La idea de este proyecto, es realizar un e-commerce de Fotografías. Como en esta entrega utilizo la API de Mercadolibre, utilicé fotos que sean acordes a los productos de las categorías.
-Pero es por eso que toma preminencia la fotografía en el inicio.
-Utilicé para el proyecto:
-Framework de Material-UI
-La extensión de estilos SASS
-React Router DOM, para la navegabilidad.
+La idea de este proyecto, es realizar un e-commerce de Fotografías, para desarrollar lo aprendido en las clases del curso.
 
-Utilicé en el Componente Carousel, las propiedades que el withRouter me brindaba, para poder tomar la "location", ponerlas en un array, y así controlar las imágenes de portada, mediante un condicional, dependiendo de la categoría o si se encuentra en el home.
+Utilicé para el proyecto:
+
+- Framework de Material-UI
+- La extensión de estilos en línea, SASS y Styled Components.
+- React Router DOM, para la navegabilidad.
+- Firebase para alojar los producos de la tienda.
+
+- NavBar
+  Nos ofrece la posibilidad de navegar por las diferentes categorías. El logo nos retorna al home y posee el cartWidget, el cual nos muestra la cantidad de productos del cart en caso de tenerlos. Es responsiva, para los pequeños dispositivos.
+
+- MainHero
+  Utilicé en este componente, las propiedades que el withRouter me brindaba, para poder tomar la "location", ponerlas en un array, y así controlar las imágenes de portada, mediante un condicional, dependiendo de la categoría o si se encuentra en el home.
 
 ## Available Scripts
 
