@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     boxShadow: "0 3px 5px 2px rgba(4, 64, 75, .2)",
     color: "white",
     height: 48,
+    width: "-webkit-fill-available",
     padding: "0 10px",
     display: "block",
     margin: "10px auto",

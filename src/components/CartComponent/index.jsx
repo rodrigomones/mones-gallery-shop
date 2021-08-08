@@ -85,9 +85,7 @@ export default function CartComponent({ productos }) {
                         component="p"
                         gutterBottom
                       >
-                        {element.description} Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Ratione provident
-                        voluptas.
+                        {element.description}
                       </Typography>
                     </Grid>
 

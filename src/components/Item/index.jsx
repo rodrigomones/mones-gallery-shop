@@ -20,7 +20,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Item({ id, initial, stock, title, price, img }) {
+export default function Item({
+  id,
+  initial,
+  description,
+  stock,
+  title,
+  price,
+  img,
+}) {
   const classes = useStyles();
 
   return (
@@ -33,8 +41,7 @@ export default function Item({ id, initial, stock, title, price, img }) {
           </Typography>
           <Typography variant="h4">${price} </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
-            libero in recusandae necessitatibus aut magni eaque.
+            {description}
           </Typography>
           <Typography variant="overline">Stock: {stock}</Typography>
         </CardContent>

@@ -4,7 +4,6 @@ export default makeStyles((theme) => ({
   root: {
     marginTop: "15vh",
     backgroundColor: "#FFFFF9",
-    maxWidth: "80vw",
     display: "grid",
     gridTemplateColumns: "1.5fr 0.5fr",
     position: "absolute",
@@ -22,14 +21,15 @@ export default makeStyles((theme) => ({
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(4, 64, 75, .2)",
     height: 48,
+    width: "-webkit-fill-available",
     padding: "0 10px",
     display: "block",
     margin: "10px auto",
   },
   button_volver: {
     position: "absolute",
-    left: -100,
-    top: -20,
+    left: 20,
+    top: -24,
     zIndex: 99,
   },
   img: {

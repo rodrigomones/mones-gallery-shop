@@ -41,7 +41,12 @@ export default function ItemDetail({ productos }) {
             {productos.title} <br />
           </Typography>
           <Typography variant="h4">${productos.price} </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            style={{ padding: "20px 0" }}
+          >
             {productos.description}
           </Typography>
           <Typography variant="overline">
@@ -53,7 +58,6 @@ export default function ItemDetail({ productos }) {
             inital={productos.initial}
             onAdd={onAdd}
             productos={productos}
-            // actualizarStock={updateStock}
           />
 
           <Link style={{ textDecoration: "none" }} to="/cart">

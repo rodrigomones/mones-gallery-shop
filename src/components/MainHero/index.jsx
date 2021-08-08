@@ -6,18 +6,16 @@ import { withRouter } from "react-router";
 const useStyles = makeStyles({
   root: {
     position: "absolute",
-    top: "150px",
-    marginLeft: "25vw",
-    fontWeight: 900,
+    top: "130px",
+    fontSize: "calc(1500vw / 1920 * 10)",
+    marginLeft: "10vw",
+    fontFamily: "Rubik",
+    fontWeight: 700,
     zIndex: 99,
-    "& span": {
-      fontWeight: 400,
-      fontSize: 24,
-    },
   },
 });
 
-const Carousel = (props) => {
+const MainHero = (props) => {
   const classes = useStyles();
   let {
     location: { pathname },
@@ -31,17 +29,21 @@ const Carousel = (props) => {
   } else if (pathnames.includes("120film")) {
     imagen = "cuadrada.jpg";
   } else {
-    imagen = "intro1.jpg";
+    imagen = "hero2.jpg";
   }
 
   return (
     <>
       <Typography className={classes.root} variant="h2">
-        {props.titulo} <br /> <span> {props.subtitulo}</span>
+        {props.titulo} <br />{" "}
+        <span>
+          {" "}
+          {props.subtitulo} <br /> {props.body}
+        </span>
       </Typography>
       <img className="fondo" src={`../images/${imagen}`} alt="foto portada1" />
     </>
   );
 };
 
-export default withRouter(Carousel);
+export default withRouter(MainHero);

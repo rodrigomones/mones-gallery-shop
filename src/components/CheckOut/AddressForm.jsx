@@ -9,7 +9,21 @@ const AddressForm = ({ next }) => {
   const [codigoPostal, setCodigoPostal] = useState();
   const [email, setEmail] = useState();
   const [telefono, setTelefono] = useState();
+  const [confirmEmail, setConfirmEmail] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [errorText, setErrorText] = useState("");
 
+  const checkValidation = (e) => {
+    const confirmEmail = e.target.value;
+    setConfirmEmail(confirmEmail);
+    if (email !== confirmEmail) {
+      setIsError(true);
+      setErrorText("El email debe coincidir");
+    } else {
+      setIsError(false);
+      setErrorText("");
+    }
+  };
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -59,6 +73,7 @@ const AddressForm = ({ next }) => {
               required
               label="Email"
               type="email"
+              autoComplete="email"
               onInput={(e) => {
                 setEmail(e.target.value);
               }}
@@ -72,6 +87,17 @@ const AddressForm = ({ next }) => {
               onInput={(e) => {
                 setTelefono(e.target.value);
               }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              label="Confirmar Email"
+              type="email"
+              value={confirmEmail}
+              onChange={(e) => checkValidation(e)}
+              error={isError}
+              helperText={errorText}
             />
           </Grid>
         </Grid>
@@ -89,7 +115,9 @@ const AddressForm = ({ next }) => {
               !codigoPostal ||
               !direccion ||
               !email ||
-              !telefono
+              !telefono ||
+              !confirmEmail ||
+              isError === true
             }
             onClick={() =>
               next(nombre, ciudad, codigoPostal, direccion, email, telefono)

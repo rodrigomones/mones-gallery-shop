@@ -11,6 +11,7 @@ export const ItemListComponent = ({ productos }) => {
               <Item
                 title={element.title}
                 initial={1}
+                description={element.description}
                 stock={element.stock}
                 img={element.img}
                 price={element.price}

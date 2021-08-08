@@ -19,6 +19,7 @@ export const ItemListContainer = (props) => {
         return {
           id: element.id,
           title: element.title,
+          description: element.description,
           img: element.thumbnail,
           price: element.price,
           stock: element.available_quantity,
@@ -33,7 +34,7 @@ export const ItemListContainer = (props) => {
   return (
     <>
       <div className="container">
-        <Typography className="texto" variant="h2">
+        <Typography variant="h3" style={{ padding: "24px 0" }}>
           {props.greeting}
         </Typography>
         <ItemListComponent productos={productos} />
