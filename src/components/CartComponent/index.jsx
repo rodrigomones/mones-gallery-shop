@@ -63,7 +63,10 @@ export default function CartComponent({ productos }) {
                         alt={element.title}
                         hideDownload={true}
                         hideZoom={true}
-                        Style={{ maxWidth: 128, maxHeight: 128 }}
+                        Style={{
+                          maxWidth: "128 !important",
+                          maxHeight: "128 !important",
+                        }}
                       />
                     </ButtonBase>
                   </Grid>
