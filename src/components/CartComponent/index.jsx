@@ -42,15 +42,9 @@ export default function CartComponent({ productos }) {
         {cart.length === 0 && (
           <div>
             <img
+              className="carritoVacio"
               src="../../images/vacio.jpg"
               alt="Carrito vacío"
-              style={{
-                backgroundRepeat: "no-repeat",
-                position: "relative",
-                minWidth: "100%",
-                minHeight: "100%",
-                backgroundSize: "100%",
-              }}
             />
             <span className={classes.text}>El carrito está vacío</span>
           </div>

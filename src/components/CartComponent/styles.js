@@ -15,6 +15,13 @@ export default makeStyles((theme) => ({
     textAlign: "initial",
     alignContent: "space-between",
   },
+  carritoVacio: {
+    backgroundRepeat: "no-repeat",
+    position: "relative",
+    minWidth: "100%",
+    minHeight: "100%",
+    backgroundSize: "100%",
+  },
   image: {
     minWidth: "128px",
     maxHeight: "128px",
