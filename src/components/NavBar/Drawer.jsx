@@ -142,7 +142,7 @@ export default function NavDrawer() {
         </List>
       </Drawer>
       <IconButton
-        color="inherit"
+        color="#141414"
         aria-label="open drawer"
         onClick={handleDrawerOpen}
         className={clsx(open && classes.hide)}

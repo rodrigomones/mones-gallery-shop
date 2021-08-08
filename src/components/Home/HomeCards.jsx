@@ -23,16 +23,9 @@ export const HomeCards = () => {
 
   return (
     <>
-      <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        borderTop={1}
-        style={{
-          background: "linear-gradient(180deg, #fff 0%, #202020 100%)",
-        }}
-      >
+      <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }} borderTop={1}>
         <Container maxWidth="lg">
-          <Box fontSize="calc(1000vw / 1920 * 10)" style={{ marginBottom: 10 }}>
+          <Box fontSize="calc(600vw / 1920 * 10)" style={{ marginBottom: 10 }}>
             Formatos fotográficos
           </Box>
           <Grid container spacing={5}>

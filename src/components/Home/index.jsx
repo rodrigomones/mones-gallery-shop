@@ -14,12 +14,18 @@ const Home = () => {
   return (
     <div className="contenedor">
       <div className="grid">
+        <img
+          className="linea"
+          src="../images/linea.svg"
+          alt=""
+          style={{ margin: 120, zIndex: 99 }}
+        />
         <div className="grid__item pos-1">
           <div
             className="grid__item-img"
             style={{
               backgroundImage: `url("https://monesrodrigo.com/img/treintaytres/305.jpg")`,
-              transform: `translateY(${offsetY * 0.3}px)`,
+              transform: `translateY(-${offsetY * 0.3}px)`,
             }}
           ></div>
         </div>
@@ -51,7 +57,7 @@ const Home = () => {
             }}
           ></div>
         </div> */}
-        <div className="grid__item pos-5">
+        {/* <div className="grid__item pos-5">
           <div
             className="grid__item-img"
             style={{
@@ -60,7 +66,7 @@ const Home = () => {
               transform: `translateY(-${offsetY * 0.7}px)`,
             }}
           ></div>
-        </div>
+        </div> */}
         <div className="grid__item pos-6">
           <div
             className="grid__item-img"
@@ -71,7 +77,7 @@ const Home = () => {
             }}
           ></div>
         </div>
-        <div className="grid__item pos-7">
+        {/* <div className="grid__item pos-7">
           <div
             className="grid__item-img"
             style={{
@@ -80,8 +86,8 @@ const Home = () => {
               transform: `translateY(-${offsetY * 0.9}px)`,
             }}
           ></div>
-        </div>
-        <div className="grid__item pos-8">
+        </div> */}
+        {/* <div className="grid__item pos-8">
           <div
             className="grid__item-img"
             style={{
@@ -90,13 +96,13 @@ const Home = () => {
               transform: `translateY(-${offsetY * 0.6}px)`,
             }}
           ></div>
-        </div>
+        </div> */}
         <div className="grid__item pos-9">
           <div
             className="grid__item-img"
             style={{
               backgroundImage:
-                "url(https://monesrodrigo.com/img/ciento/000008-2.jpg)",
+                "url(https://monesrodrigo.com/img/treintaytres/300.jpg)",
               transform: `translateY(-${offsetY * 0.4}px)`,
             }}
           ></div>
@@ -105,9 +111,7 @@ const Home = () => {
           <div
             className="grid__item-img"
             style={{
-              backgroundImage:
-                "url(https://monesrodrigo.com/img/treinta/9.jpg)",
-              transform: `translateY(-${offsetY * 0.7}px)`,
+              backgroundImage: "url(../images/flecha.svg)",
             }}
           ></div>
         </div>

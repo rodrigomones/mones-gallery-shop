@@ -7,7 +7,7 @@ import { CartContext } from "../../Context/CartContext";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "rgb(219,247,253)",
+    backgroundColor: "#FFF",
     height: "100vh",
   },
 });
