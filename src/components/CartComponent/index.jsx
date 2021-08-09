@@ -10,7 +10,6 @@ import { Button, CssBaseline, IconButton, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import ButtonBase from "@material-ui/core/ButtonBase";
-import ModalImage from "react-modal-image";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 
@@ -56,17 +55,10 @@ export default function CartComponent({ productos }) {
                 <Grid container spacing={2}>
                   <Grid item>
                     <ButtonBase className={classes.image}>
-                      <ModalImage
-                        small={element.thumbnail}
+                      <img
+                        src={element.thumbnail}
                         className={classes.img}
-                        large={element.thumbnail}
                         alt={element.title}
-                        hideDownload={true}
-                        hideZoom={true}
-                        Style={{
-                          maxWidth: "128 !important",
-                          maxHeight: "128 !important",
-                        }}
                       />
                     </ButtonBase>
                   </Grid>
