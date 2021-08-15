@@ -2,12 +2,12 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
+    width: "100%",
     display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 
@@ -20,7 +20,7 @@ export default function CircularDeterminate() {
       setProgress((prevProgress) =>
         prevProgress >= 100 ? 0 : prevProgress + 10
       );
-    }, 400);
+    }, 100);
 
     return () => {
       clearInterval(timer);
