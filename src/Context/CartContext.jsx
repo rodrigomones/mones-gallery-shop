@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { getFirestore } from "../firebase/client";
+import CircularDeterminate from "../components/Spinner";
 
 export const CartContext = createContext();
 
@@ -10,12 +11,14 @@ export const CartProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
   const [listProductos, setListProductos] = useState([]);
   const [compraId, setCompraId] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
       const DB = getFirestore();
       const COLLECTION = DB.collection("productos");
       const RESPONSE = await COLLECTION.get();
+      setLoading(false);
       setListProductos(
         RESPONSE.docs.map((element) => {
           return { id: element.id, ...element.data() };
@@ -134,7 +137,7 @@ export const CartProvider = ({ children }) => {
         compraId,
       }}
     >
-      {children}
+      {loading ? <CircularDeterminate /> : children}
     </Provider>
   );
 };
