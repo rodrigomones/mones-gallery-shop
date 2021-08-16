@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 200,
   },
 }));
 
@@ -29,7 +30,7 @@ export default function CircularDeterminate() {
 
   return (
     <div className={classes.root}>
-      <CircularProgress variant="determinate" value={progress} />
+      <CircularProgress value={progress} />
     </div>
   );
 }
