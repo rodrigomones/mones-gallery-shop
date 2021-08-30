@@ -18,18 +18,22 @@ Utilicé para el proyecto:
 - Three.js con React Three Fiber y Drei, para renderizar la animación del modelo 3D de la cámara en el home.
 
 ## NavBar
-  Nos ofrece la posibilidad de navegar por las diferentes categorías. El logo nos retorna al home y posee el cartWidget, el cual nos muestra la cantidad de productos del cart en caso de tenerlos. Es responsiva, para los pequeños dispositivos.
+
+Nos ofrece la posibilidad de navegar por las diferentes categorías. El logo nos retorna al home y posee el cartWidget, el cual nos muestra la cantidad de productos del cart en caso de tenerlos. Es responsiva, para los pequeños dispositivos.
 
 ## MainHero
-  Utilicé en este componente, las propiedades que el withRouter me brindaba, para poder tomar la "location", ponerlas en un array, y así controlar las imágenes de portada, mediante un condicional, dependiendo de la categoría o si se encuentra en el home.
-  En el home, animé el texto con keyframes de styled-components y para el parallax utilicé "react-parallax-tilt".
+
+Utilicé en este componente, las propiedades que el withRouter me brindaba, para poder tomar la "location", ponerlas en un array, y así controlar las imágenes de portada, mediante un condicional, dependiendo de la categoría o si se encuentra en el home.
+En el home, animé el texto con keyframes de styled-components y para el parallax utilicé "react-parallax-tilt".
 
 ## Checkout
-  Consta de dos pasos:
-  - Formulario de datos, donde se realiza la comprobación del mail, y se deben completar todos los datos para poder continuar con el proceso.
-  - Detalle de la orden, incluye el detalle de los items a pagar, y las opciones de pago, de las cuales se deberá seleccionar una para continuar.
-  - Por último se muestra el comprobante, con el código referente de la compra, generada por firebase.
+
+Consta de dos pasos:
+
+- Formulario de datos, donde se realiza la comprobación del mail, y se deben completar todos los datos para poder continuar con el proceso.
+- Detalle de la orden, incluye el detalle de los items a pagar, y las opciones de pago, de las cuales se deberá seleccionar una para continuar.
+- Por último se muestra el comprobante, con el código referente de la compra, generada por firebase.
 
 ## Prueba en Vercel
 
-https://vercel.com/rodrigomones/mones-gallery-shop-17565
+https://mones-gallery-shop-17565.vercel.app/
