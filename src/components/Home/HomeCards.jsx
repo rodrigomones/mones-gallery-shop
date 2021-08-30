@@ -25,7 +25,10 @@ export const HomeCards = () => {
     <>
       <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }} borderTop={1}>
         <Container maxWidth="lg">
-          <Box fontSize="calc(600vw / 1920 * 10)" style={{ marginBottom: 10 }}>
+          <Box
+            fontSize="calc(1200vw / 1920 * 4)"
+            style={{ marginBottom: 10, fontWeight: 900 }}
+          >
             Formatos fotográficos
           </Box>
           <Grid container spacing={5}>
@@ -56,7 +59,7 @@ export const HomeCards = () => {
                     component={Link}
                     to="/category/35mm-h"
                     size="small"
-                    color="primary"
+                    color="#141414"
                   >
                     Ver Más
                   </Button>
@@ -90,7 +93,7 @@ export const HomeCards = () => {
                     component={Link}
                     to="/category/35mm-v"
                     size="small"
-                    color="primary"
+                    color="#141414"
                   >
                     Ver Más
                   </Button>
@@ -124,7 +127,7 @@ export const HomeCards = () => {
                     component={Link}
                     to="/category/120film"
                     size="small"
-                    color="primary"
+                    color="#141414"
                   >
                     Ver Más
                   </Button>

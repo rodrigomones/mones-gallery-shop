@@ -3,6 +3,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { Link as Ruta } from "react-router-dom";
+import "./style.scss";
 
 export const Footer = () => {
   return (
@@ -28,7 +29,7 @@ export const Footer = () => {
                 to="/"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="caption" display="block">
+                <Typography className="hover" variant="caption" display="block">
                   Home
                 </Typography>
               </Link>
@@ -37,7 +38,7 @@ export const Footer = () => {
                 to="/category/35mm-h"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="caption" display="block">
+                <Typography className="hover" variant="caption" display="block">
                   35mm↔
                 </Typography>
               </Link>
@@ -46,7 +47,7 @@ export const Footer = () => {
                 to="/category/35mm-v"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="caption" display="block">
+                <Typography className="hover" variant="caption" display="block">
                   35mm↕
                 </Typography>
               </Link>
@@ -55,7 +56,7 @@ export const Footer = () => {
                 to="/category/120film"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="caption" display="block">
+                <Typography className="hover" variant="caption" display="block">
                   120mm
                 </Typography>
               </Link>
@@ -74,7 +75,7 @@ export const Footer = () => {
                   margin: 10,
                 }}
               >
-                <InstagramIcon />
+                <InstagramIcon className="hover"/>
               </Link>
               <Link
                 href="https://github.com/rodrigomones"
@@ -82,7 +83,7 @@ export const Footer = () => {
                 rel="noopener"
                 style={{ textDecoration: "none", color: "white", margin: 10 }}
               >
-                <GitHubIcon />
+                <GitHubIcon className="hover"/>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/monesrodrigo/"
@@ -90,7 +91,7 @@ export const Footer = () => {
                 rel="noopener"
                 style={{ textDecoration: "none", color: "white", margin: 10 }}
               >
-                <LinkedInIcon />
+                <LinkedInIcon className="hover"/>
               </Link>
             </Grid>
             <Grid item xs={12} sm={4}>
@@ -107,7 +108,7 @@ export const Footer = () => {
                 rel="noopener"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Typography variant="caption">monesrodrigo.com</Typography>
+                <Typography className="hover" variant="caption">monesrodrigo.com</Typography>
               </Link>
             </Grid>
           </Grid>

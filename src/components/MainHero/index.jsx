@@ -2,6 +2,8 @@ import { Typography } from "@material-ui/core";
 import "./style.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import { withRouter } from "react-router";
+import { Suspense } from "react";
+import CircularDeterminate from "../Spinner";
 
 const useStyles = makeStyles({
   root: {
@@ -34,14 +36,20 @@ const MainHero = (props) => {
 
   return (
     <>
-      <Typography className={classes.root} variant="h2">
-        {props.titulo} <br />{" "}
-        <span>
-          {" "}
-          {props.subtitulo} <br /> {props.body}
-        </span>
-      </Typography>
-      <img className="fondo" src={`../images/${imagen}`} alt="foto portada1" />
+      <Suspense fallback={<CircularDeterminate />}>
+        <Typography className={classes.root} variant="h2">
+          {props.titulo} <br />{" "}
+          <span>
+            {" "}
+            {props.subtitulo} <br /> {props.body}
+          </span>
+        </Typography>
+        <img
+          className="fondo"
+          src={`../images/${imagen}`}
+          alt="foto portada1"
+        />
+      </Suspense>
     </>
   );
 };

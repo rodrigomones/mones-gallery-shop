@@ -11,6 +11,9 @@ import Home from "./components/Home";
 import MainHero from "./components/MainHero";
 import TextAnimation from "./components/MainHero/TextAnimation";
 import { HomeCards } from "./components/Home/HomeCards";
+import SectionCamera from "./components/Home/Section";
+import { Suspense } from "react";
+import  ContactForm  from "./components/Home/Contact";
 
 function App() {
   return (
@@ -25,8 +28,13 @@ function App() {
                 subtitulo={"Analógica"}
                 body={<TextAnimation />}
               />
-              <Home />
+              <Suspense fallback={null}>
+                <Home />
+              </Suspense>
               <HomeCards />
+              <SectionCamera />
+              {/* <Extra /> */}
+              <ContactForm />
             </Route>
             <Route path="/category/:category_id">
               <MainHero />
