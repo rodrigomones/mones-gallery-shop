@@ -32,7 +32,7 @@ function App() {
                 <Home />
               </Suspense>
               <HomeCards />
-              <SectionCamera />
+              {/* <SectionCamera /> */}
               {/* <Extra /> */}
               <ContactForm />
             </Route>

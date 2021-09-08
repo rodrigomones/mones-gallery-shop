@@ -1,7 +1,8 @@
-import React, { Suspense, useRef } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
 import "./style.css";
+import gsap from 'gsap';
 
 const Model = () => {
   const gltf = useGLTF("../scene.gltf", true);
@@ -47,10 +48,17 @@ const HTMLContent = () => {
 };
 
 const SectionCamera = () => {
+  let app = useRef(null)
+
+  useEffect(() => {
+    gsap.to(".background", {duration: 0, css: {visibility: 'visible'} });
+  })
   return (
     <div
       className="background"
+      ref={el => app = el}
       style={{
+        visibility: 'hidden',
         background: `url("../images/Lugano.jpg") center no-repeat`,
         backgroundSize: "99%",
       }}

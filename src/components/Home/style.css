@@ -18,6 +18,10 @@
     0 0 90px #fffff9;
 }
 
+.contenedor {
+  visibility: hidden;
+}
+
 .grid {
   pointer-events: none;
   position: absolute;
