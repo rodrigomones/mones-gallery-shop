@@ -6,7 +6,9 @@ const Home = () => {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
+  // eslint-disable-next-line no-unused-vars
   let app = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   let images = useRef(null);
 
   useEffect(() => {
