@@ -1,26 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import "./style.css";
-import gsap from 'gsap';
+import gsap from "gsap";
 
 const Home = () => {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
-  let app = useRef(null)
-  let images = useRef(null)
-  
+  let app = useRef(null);
+  let images = useRef(null);
+
   useEffect(() => {
-    gsap.to(".contenedor", {duration: 0, css: {visibility: 'visible'} });
-    gsap.from(".grid", {opacity: 0, y: 120, duration: 1.5});
-    
+    gsap.to(".contenedor", { duration: 0, css: { visibility: "visible" } });
+    gsap.from(".grid", { opacity: 0, y: 120, duration: 1.5 });
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="contenedor" ref={ el => app = el}>
-      <div className="grid" ref={ el => images = el}>
+    <div className="contenedor" ref={(el) => (app = el)}>
+      <div className="grid" ref={(el) => (images = el)}>
         <img
           className="linea"
           src="../images/linea.svg"

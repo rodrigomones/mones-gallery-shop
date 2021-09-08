@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import { useState } from "react";
 import { getFirestore } from "../../firebase/client";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
   const [nombre, setNombre] = useState();
@@ -30,9 +30,9 @@ const ContactForm = () => {
       .then(() => {
         Swal.fire(
           "¡Gracias por el mensaje!",
-        "Te estaremos respondiendo a la brevedad",
-        'success'
-      )
+          "Te estaremos respondiendo a la brevedad",
+          "success"
+        );
       })
       .catch((error) => {
         alert(error.message);
@@ -69,13 +69,8 @@ const ContactForm = () => {
           >
             Contactanos
           </Typography>
-          <Grid
-            container
-            justify-content="center"
-            align-items="center"
-            wrap-xs-nowrap
-          >
-            <Grid item xs={6} sm={6}>
+          <Grid container justify-content="center" align-items="center">
+            <Grid item xs={12} sm={6}>
               <img
                 src="https://www.laampliadora.org/wp-content/uploads/2016/04/lab-analogico-laampliadora.jpg"
                 alt="laboratorio fotográdico"
@@ -83,10 +78,11 @@ const ContactForm = () => {
               />
             </Grid>
 
-            <Grid xs={6} style={{ width: "-webkit-fill-available" }}>
+            <Grid xs={12} sm={6}>
               <Paper
                 style={{
                   padding: "20px 0 10px 20px",
+                  minHeight: 406,
                 }}
               >
                 <Grid item xs={12} sm={6} style={{ marginBottom: 20 }}>

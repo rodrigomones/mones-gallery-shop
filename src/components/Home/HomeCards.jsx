@@ -8,6 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const useStyles = makeStyles({
   root: {
@@ -20,11 +22,24 @@ const useStyles = makeStyles({
 
 export const HomeCards = () => {
   const classes = useStyles();
+  let app = useRef(null);
+
+  useEffect(() => {
+    gsap.to(".container", { duration: 3, css: { visibility: "visible" } });
+    gsap.from(".container", { opacity: 0, y: 120, duration: 2.5 });
+  });
 
   return (
     <>
-      <Box px={{ xs: 3, sm: 10 }} py={{ xs: 5, sm: 10 }} borderTop={1}>
-        <Container maxWidth="lg">
+      <Box
+        className="container"
+        px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        borderTop={1}
+        ref={(el) => (app = el)}
+        style={{ visibility: "hidden" }}
+      >
+        <Container className="wrapper" maxWidth="lg">
           <Box
             fontSize="calc(1200vw / 1920 * 4)"
             style={{ marginBottom: 10, fontWeight: 900 }}
