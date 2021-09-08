@@ -22,6 +22,7 @@ const useStyles = makeStyles({
 
 export const HomeCards = () => {
   const classes = useStyles();
+  // eslint-disable-next-line no-unused-vars
   let app = useRef(null);
 
   useEffect(() => {
